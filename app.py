@@ -1,26 +1,4 @@
-import tkinter as tk
-
-win = tk.Tk() 
-
-e1 = tk.StringVar() # переменная связанная с полем
-entry1 = tk.Entry(master=win, textvariable=e1, width=25).pack(side='left', anchor='nw', padx=5, pady=4)
-
-resp = ''  # выводит переменную после написания данных
-
-def button_clck():
-    resp = e1.get() # получить ввод
-    file = open("d", "w")
-    file.write(resp)
-    file.close()
-    win.destroy()
-
-
-button = tk.Button(master=win, text='enter http url from cmd', command=button_clck).pack(side='left', anchor='nw', padx=5, pady=2)
-
-win.mainloop()
-f1 = open('d')
-url = f1.read(10000)
-f1.close
+url = ""
 from flask import Flask, request, send_file, render_template
 import os
 import base64
